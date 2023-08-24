@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+Suzanne Piver and Miya Nakata
+5/7/2023
+Section: CSE154 AA
+This is the index.html file for our e-commerce final project webpage. It's in charge of
+the structure/layout of our webpage.
+scroll bar inspired by: https://www.youtube.com/watch?v=gzXyRa7jwk4
+All included clothing images are from the Free People clothing company's website:
+https://www.freepeople.com/?ref=logo
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Final Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bruno+Ace&family=Caveat&family=Dongle:wght@300&family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <header>
+      <!-- This logo image is courtesy of 'marina's favorite -->
+      <a href="#"><img id="logo" src="imgs/marinas-favorite.jpg" alt="logo"></a>
+      <input type="text" id="search-bar" placeholder="Search...">
+      <nav>
+        <ul class="nav-links">
+          <li><div id="cart">Cart</div></li>
+          <li><div id="profile">Log in/Sign up</div></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="error-msg"></section>
+    <section id="home-page">
+      <button id="compact-button" class="home-switch-buttons hidden">Switch to Compact View</button>
+      <button id="grid-button" class="home-switch-buttons">Switch to Grid View</button>
+      <button id="top-filter" class="filter">Filter Tops</button>
+      <button id="bottom-filter" class="filter">Filter Bottoms</button>
+      <button id="dress-filter" class="filter">Filter Dresses</button>
+      <section id="compact-home-page">
+        <h2>Tops</h2>
+        <section id="top-scroll" class="scroller">
+          <img class="scroll-button left-scroll" src="imgs/lbutton.png" alt="left scroll button fetched from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F7313916%2Fleft_chevron_left_arrow_button_arrows_circle_direction_icon&psig=AOvVaw0n-gp1LxAmcezpXfofviNL&ust=1686109499705000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNDgktXdrf8CFQAAAAAdAAAAABAE">
+          <section id="top" class="scroller-content"></section>
+          <img class="scroll-button right-scroll" src="imgs/rbutton.png" alt="right scroll button fetched from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F7313916%2Fleft_chevron_left_arrow_button_arrows_circle_direction_icon&psig=AOvVaw0n-gp1LxAmcezpXfofviNL&ust=1686109499705000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNDgktXdrf8CFQAAAAAdAAAAABAE">
+        </section>
+        <h2>Bottoms</h2>
+        <section id="bottom-scroll" class="scroller">
+          <img class="scroll-button left-scroll" src="imgs/lbutton.png" alt="left scroll button fetched from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F7313916%2Fleft_chevron_left_arrow_button_arrows_circle_direction_icon&psig=AOvVaw0n-gp1LxAmcezpXfofviNL&ust=1686109499705000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNDgktXdrf8CFQAAAAAdAAAAABAE">
+          <section id="bottom" class="scroller-content"> </section>
+          <img class="scroll-button right-scroll" src="imgs/rbutton.png" alt="right scroll button fetched from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F7313916%2Fleft_chevron_left_arrow_button_arrows_circle_direction_icon&psig=AOvVaw0n-gp1LxAmcezpXfofviNL&ust=1686109499705000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNDgktXdrf8CFQAAAAAdAAAAABAE">
+        </section>
+        <h2>Dresses</h2>
+        <section id="dress-scroll" class="scroller">
+          <img class="scroll-button left-scroll" src="imgs/lbutton.png" alt="left scroll button fetched from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F7313916%2Fleft_chevron_left_arrow_button_arrows_circle_direction_icon&psig=AOvVaw0n-gp1LxAmcezpXfofviNL&ust=1686109499705000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNDgktXdrf8CFQAAAAAdAAAAABAE">
+          <section id="dress" class="scroller-content"> </section>
+          <img class="scroll-button right-scroll" src="imgs/rbutton.png" alt="right scroll button fetched from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F7313916%2Fleft_chevron_left_arrow_button_arrows_circle_direction_icon&psig=AOvVaw0n-gp1LxAmcezpXfofviNL&ust=1686109499705000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNDgktXdrf8CFQAAAAAdAAAAABAE">
+        </section>
+      </section>
+      <section id="grid-home-page" class="hidden grid"></section>
+    </section>
+    <section id="item-page" class="hidden">
+      <p id="item-name"></p>
+      <img src="imgs/sampleimg1.png" alt="sample image https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F7313916%2Fleft_chevron_left_arrow_button_arrows_circle_direction_icon&psig=AOvVaw0n-gp1LxAmcezpXfofviNL&ust=1686109499705000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNDgktXdrf8CFQAAAAAdAAAAABAE">
+      <p id="item-price"></p>
+      <div id="size-buttons">
+        <button id="xs">XS</button>
+        <button id="s">S</button>
+        <button id="m">M</button>
+        <button id="l">L</button>
+        <button id="xl">XL</button>
+        <button id="xxl">XXL</button>
+      </div>
+      <button id="add-to-cart" disabled>Add to Cart</button>
+      <h2>Reviews</h2>
+      <section id="reviews"></section>
+    </section>
+    <section id="checkout-page" class="hidden">
+      <button id="confirm-button">Are You Sure You're Ready to Checkout?</button>
+      <button id="checkout-button" disabled>Checkout</button>
+    </section>
+    <section id="login-page" class="hidden">
+      <article id="login-signup">
+        <form id="login-view">
+          <h2>Login</h2>
+          <input type="text" name="name" id="log-name" placeholder="Username">
+          <input type="text" name="password" id="log-password" placeholder="Password">
+          <button id="login-btn" disabled>Login</button>
+        </form>
+        <br>
+        <p>OR</p>
+        <br>
+        <form id="signup-view">
+          <h2>Sign up</h2>
+          <input type="text" name="name" id="sign-name" placeholder="Username">
+          <input type="text" name="email" id="sign-email" placeholder="Email">
+          <input type="text" name="password" id="sign-password" placeholder="Password">
+          <button id="sign-btn" disabled>Sign Up</button>
+        </form>
+      </article>
+    </section>
+    <section id="history-page" class="hidden">
+      <h2>Your Purchase History</h2>
+      <div id="logout-btn-box">
+        <button id="logout-btn">Log Out</button>
+      </div>
+      <section id="history-box"></section>
+    </section>
+    <section id="review-page" class="hidden">
+      <h2>New Review</h2>
+      <p></p>
+      <form id="new-review">
+        <textarea rows="1" name='rating' cols="10" id="rating" placeholder="Rate: 1-5"
+          required minlength="1" maxlength="1"></textarea>
+        <textarea rows="5" cols="30"  id="comments" placeholder="Comments"></textarea>
+      </form>
+      <button id="post-review">Post Review</button>
+    </section>
+    <section id="search-page" class="hidden grid"></section>
+    <footer>
+      <p>All clothing information courtesy of Free People</p>
+    </footer>
+  </body>
+</html>

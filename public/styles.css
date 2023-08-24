@@ -1,0 +1,518 @@
+/*
+Name: Suzanne Piver and Miya Nakata
+Date: 5/9/2023
+Section: CSE154 AA
+This is the styles.css file for our e-commerce final project webpage. It is in charge of
+all the styling you see on the webpage.
+The theme of the website follows an off white color scheme with light pink accents on the buttons
+*/
+
+/* ------------------------------------------------------------------------- */
+/* --------------------- GENERAL STYLING START ----------------------------- */
+/* ------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #FCF9EF;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ------------------ GENERAL BODY STYLING ------------------ */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* ------------------ GENERAL FOOTER STYLING ------------------ */
+footer {
+  background-color: #4F4646;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+footer p {
+  background-color: #4F4646;
+  color: #FCF9EF;
+}
+
+/* ------------------ GENERAL ERROR MSG STYLING ------------------ */
+#error-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(231, 153, 166);
+}
+
+#error-content {
+  background-color: rgb(231, 153, 166);
+}
+/* ------------------------------------------------------------------------- */
+/* --------------------- GENERAL STYLING START ----------------------------- */
+/* ------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------- */
+/* --------------------- BUTTON STYLING START ------------------------------ */
+/* ------------------------------------------------------------------------- */
+
+/* color of button when not clicked
+  ------also the font ----------- */
+button:not([disabled]) {
+  background-color: rgb(231, 153, 166);
+  font-family: 'Inter', sans-serif;
+}
+
+/* when you hover over the button add a shadow */
+button:hover:not([disabled]) {
+  box-shadow: 0px 0px 5px #4F4646;
+}
+
+/* Color when button is being clicked */
+button:active {
+  background-color: rgb(190, 113, 126);
+}
+
+/* color when button is disabled */
+button:disabled {
+  background-color: rgb(117, 100, 102);
+}
+/* ------------------------------------------------------------------------- */
+/* --------------------- BUTTON STYLING END -------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------- */
+/* --------------------- NAV BAR STYLING START ----------------------------- */
+/* ------------------------------------------------------------------------- */
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 2%;
+  background-color: #4F4646;
+  margin-bottom: 30px;
+}
+
+header a {
+  background-color: #4F4646;
+}
+
+#logo, #search-bar {
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+#search-bar {
+  border: 0;
+  padding: 6px;
+  width: 25vw;
+  border-radius: 0.7rem;
+}
+
+#logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  background-color: #4F4646;
+  cursor: pointer;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0 20px;
+  background-color: #4F4646;
+}
+
+#cart, #profile {
+  color: #FCF9EF;
+  background-color: #4F4646;
+}
+
+/* ------------------------------------------------------------------------- */
+/* --------------------- HOMEPAGE STYLING START ---------------------------- */
+/* ------------------------------------------------------------------------- */
+
+#home-page h2 {
+  font-size: 3vw;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+.home-switch-buttons, .filter {
+  height: 20px;
+  border-radius: 10px;
+}
+
+.home-switch-buttons {
+  width: 200px;
+  margin: 20px;
+}
+
+.filter {
+  width: 120px;
+  margin: 8px;
+}
+
+button.filtered {
+  background-color: rgb(128, 59, 70);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.grid div {
+  width: 20%;
+  margin: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex: none;
+}
+
+.grid img {
+  align-items: center;
+}
+
+.scroller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10% auto;
+  margin-top: 0px;
+  margin-bottom: 60px;
+}
+
+.scroller-content {
+  margin: 0px;
+  width: 3000px;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  align-items: center;
+}
+
+.scroller-content .imageDiv {
+  width: 95%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-gap: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex: none;
+}
+
+.scrollImage img, .grid img {
+  width: 100%;
+  transition: transform 0.5s;
+}
+
+.scrollImage img {
+  border-radius: 10%;
+}
+
+.scrollImage p, .grid p {
+  text-align: left;
+  font-size: 2vw;
+  margin-top: auto;
+}
+
+.scrollImage img:hover, .grid img:hover {
+  box-shadow: 0px 0px 10px #4F4646;
+  transform: scale(1.1);
+}
+
+.scrollImage p:hover, .grid p:hover {
+  color: rgb(141, 141, 240);
+  cursor: pointer;
+}
+
+.scroller-content::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-button {
+  max-width: 5%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.scroll-button:hover {
+  box-shadow: 0px 0px 5px #4F4646;
+}
+/* ------------------------------------------------------------------------- */
+/* --------------------- HOMEPAGE STYLING END ------------------------------ */
+/* ------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------- */
+/* ------------------ LOGIN & SIGN UP STYLING START ------------------------ */
+/* ------------------------------------------------------------------------- */
+#login-signup {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+  padding: 15px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+#login-signup p {
+  margin: 20px;
+}
+
+#login-signup h2 {
+  margin: auto;
+}
+
+#login-view, #signup-view {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+#login-view input, #signup-view input {
+  padding: 5px;
+  margin: 5px;
+}
+/* ------------------------------------------------------------------------- */
+/* --------------------- LOGIN & SIGN UP STYLING END ----------------------- */
+/* ------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------- */
+/* --------------------- TRANSACTION HISTORY STYLING START ----------------- */
+/* ------------------------------------------------------------------------- */
+#logout-btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#history-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#history-page h2, #history-page h3 {
+  margin-bottom: 10px;
+}
+
+#history-page h2 {
+  text-align: center;
+}
+/* ------------------------------------------------------------------------- */
+/* --------------------- TRANSACTION HISTORY STYLING END ------------------- */
+/* ------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------- */
+/* ------------------ SINGLE ITEM PAGE STYLING START ----------------------- */
+/* ------------------------------------------------------------------------- */
+#item-page {
+  margin: auto;
+  text-align: center;
+}
+
+#item-page h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: lighter;
+}
+
+#item-name {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+#item-price {
+  font-size: 20px;
+}
+
+#item-page img {
+  width: 30%;
+  margin: auto;
+}
+
+#add-to-cart {
+  width: 60%;
+  padding: 10px;
+  margin: 15px;
+  border: 0;
+  color: white;
+}
+
+#size-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#size-buttons button {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+#size-buttons .checked {
+  background-color: rgb(128, 59, 70);
+}
+
+#reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#reviews div, #reviews p {
+  background-color: #e3e0d7;
+  text-align: left;
+}
+
+div.review {
+  width: 60%;
+  border: 2px black solid;
+  margin: 10px;
+  display: flex;
+}
+
+div.review > p {
+  margin-right: 20px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------------------------- */
+/* ------------------ SINGLE ITEM PAGE STYLING END ------------------------- */
+/* ------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------- */
+/* ------------------ CHECKOUT PAGE STYLING START -------------------------- */
+/* ------------------------------------------------------------------------- */
+/* center cards on page */
+#checkout-page {
+  margin: auto;
+  text-align: center;
+}
+
+#checkout-page div, #checkout-page p, #history-box div, #history-box p {
+  background-color: #e3e0d7;
+}
+
+/* outer div aka one card with it's image and text */
+#checkout-page > div, #history-box > div {
+  display: flex;
+  width: 80%;
+  /* height: 30vw; */
+  border: 2px solid #4F4646;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* sizing the image */
+#checkout-page img, #history-box img {
+  width: 25%;
+  margin: 8px;
+  margin-left: 15px;
+}
+
+/* sizing and stacking the ptags(name, price, size) */
+#checkout-page div div, #history-box div div {
+  font-size: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* spacing between text */
+#checkout-page p, #history-box p {
+  margin: 5px;
+}
+
+.remove-button, .review-button {
+  font-family: 'Inter', sans-serif;
+  width: 80%;
+  height: 10%;
+  font-size: 60%;
+  text-align: center;
+  border: 0;
+  margin-left: 13px;
+}
+
+#checkout-button, #confirm-button {
+  width: 60%;
+  flex: none;
+  text-align: center;
+  padding: 10px;
+  border: 0;
+  margin: auto;
+}
+
+#checkout-button:disabled, #confirm-button:disabled {
+  width: 60%;
+}
+
+#checkout-button:disabled {
+  color: white;
+}
+
+/* ------------------------------------------------------------------------- */
+/* ------------------ CHECKOUT PAGE STYLING END ---------------------------- */
+/* ------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------- */
+/* ------------------ REVIEW  PAGE STYLING START --------------------------- */
+/* ------------------------------------------------------------------------- */
+#review-page h2, #review-page p {
+  margin: 10px;
+  text-align: center;
+}
+
+#review-page form {
+  margin: auto;
+  display: flex;
+  width: 50%;
+  height: 70%;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(224, 149, 161);
+}
+
+#new-review textarea {
+  margin: 10px;
+  resize: none;
+  border: 2px solid black;
+}
+
+#rating {
+  width: 20%;
+  text-align: center;
+}
+
+#post-review {
+  background-color: #e3e0d7;
+  width: 200px;
+  height: 20px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/* ------------------------------------------------------------------------- */
+/* ------------------ REVIEW PAGE STYLING END ------------------------------ */
+/* ------------------------------------------------------------------------- */
+
+.hidden {
+  display: none;
+}
